@@ -222,7 +222,7 @@ Finally, inside of `App.jsx`, we'll add a variable `unread` and set it equal to 
 
 let button
 
-const unread = loggedIn && <Mailbox messages={messages} />
+const unread = loggedIn && <Inbox messages={messages} />
 
 if (loggedIn) {
   button = <Logout handleClick={handleClick} />
