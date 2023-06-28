@@ -179,10 +179,10 @@ You may embed any expressions in JSX by wrapping them in curly braces. This incl
 
 Let's add one more component to our `components` folder...
 
-#### Mailbox.jsx
+#### Inbox.jsx
 
 ```jsx
-const Mailbox = ({ messages }) => {
+const Inbox = ({ messages }) => {
 
   return (
     <div>
@@ -194,16 +194,16 @@ const Mailbox = ({ messages }) => {
   )
 }
 
-export default Mailbox
+export default Inbox
 ```
 
 Now we'll import it within our `App.jsx` component.
 
 ```js
-import Mailbox from './components/Mailbox'
+import Inbox from './components/Inbox'
 ```
 
-Before we render `Mailbox`, we'll need to add another state variable to pass as props.
+Before we render `Inbox`, we'll need to add another state variable to pass as props.
 
 ```js
 const [messages, setMessages] = useState([
@@ -213,7 +213,7 @@ const [messages, setMessages] = useState([
 ])
 ```
 
-Finally, inside of `App.jsx`, we'll add a variable `unread` and set it equal to another inline logical && operator that will only render `<Messages />` if the user is logged in.
+Finally, inside of `App.jsx`, we'll add a variable `unread` and set it equal to another inline logical && operator that will only render `<Inbox />` if the user is logged in.
 
 - Don't forget to call in `{messages}` inside your return statement.
 
@@ -244,7 +244,7 @@ import './App.css'
 import Greeting from './components/Greeting'
 import Login from './components/Login'
 import Logout from './components/Logout'
-import Mailbox from './components/Mailbox'
+import Inbox from './components/Inbox'
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -261,7 +261,7 @@ const App = () => {
 
   let button
 
-  const unread = loggedIn && <Mailbox messages={messages} />
+  const unread = loggedIn && <Inbox messages={messages} />
 
   if (loggedIn) {
     button = <Logout handleClick={handleClick} />
