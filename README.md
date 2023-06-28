@@ -49,7 +49,9 @@ return (!isLoggedIn ? <LogInPage />  :  <WelcomePage /> )
 
 - `Fork` and `clone` this repository and `cd` into the new directory
 - Create a new React app with `npm create vite@latest`
-- Run `npm start` to open your app in the browser
+- `cd` into the new project
+- `npm install` to install our dependencies
+- Run `npm run dev` to open your app in the browser
 - Within `src`, create a `components` folder to store components we'll be creating in this lesson
 
 ## Instructions
