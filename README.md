@@ -13,7 +13,7 @@ In this lesson we'll be covering conditional rendering with React by building a 
 
 ## Getting Started
 
-- `Fork` and `clone` this repository and `cd` into the new directory
+- `Fork` and `Clone` this repository and `cd` into the new directory
 - `npm install` to install our dependencies
 - Run `npm run dev` to open your app in the browser
 
@@ -76,6 +76,7 @@ Make sure to import our `Greeting` component into `App.jsx`. Add your Greeting c
 #### App.jsx
 
 ```js
+import './App.css'
 import Greeting from './components/Greeting'
 
 const App = () => {
@@ -84,7 +85,7 @@ const App = () => {
     <div>
       <Greeting loggedIn={false} />
     </div>
-  );
+  )
 }
 
 export default App
@@ -121,7 +122,7 @@ export default Login
 #### Logout.jsx
 
 ```jsx
-const LogoutButton = ({ handleClick }) => {
+const Logout = ({ handleClick }) => {
 
   return (
     <button onClick={handleClick}>Log Out</button>
@@ -297,15 +298,16 @@ Another method for conditionally rendering elements inline is to use the JavaScr
 To try this out, let's add a `<p>` tag inside the return of `App.jsx`. This `<p>` tag will tell us whether the user is logged in or not depending on the outcome of the ternary statement:
 
 ```js
-// App.js
+// App.jsx
+
 return (
-    <div>
-      <Greeting loggedIn={loggedIn} />
-      <p>The user is <b>{loggedIn ? 'currently' : 'not'}</b> logged in.</p>
-      {button}
-      {unread}
-    </div>
-  )
+  <div>
+    <Greeting loggedIn={loggedIn} />
+    <p>The user is <b>{loggedIn ? 'currently' : 'not'}</b> logged in.</p>
+    {button}
+    {unread}
+  </div>
+)
 ```
 
 ### Preventing Component from Rendering
